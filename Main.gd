@@ -7,6 +7,7 @@ onready var a4 = get_node("Animal4")
 onready var a5 = get_node("Animal5") 
 var a_num = 1
 
+#initializes first chicken
 func _ready():
 	a1.initialized = true
 	a1.visible = true
@@ -17,14 +18,12 @@ func _ready():
 	a5.visible = false
 	timer_start()
 
-#func _physics_process(_delta):
-
 func timer_start():
 	var timer = get_node("Timer")
 	timer.set_wait_time(20)
 	timer.start()	
 
-
+#initializes next chicken 
 func _on_Timer_timeout():
 	a_num += 1
 	if a_num == 2:
